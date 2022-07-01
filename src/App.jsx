@@ -1,7 +1,7 @@
 
 import './App.css';
-import ComponenteContenedor from './componentes/container/CoponenteContenedor';
-
+import ItemListContainer from "./componentes/container/ItemListContainer";
+import Titulo from "./componentes/container/titulo";
 import NavBar from "./componentes/navbar/navbar";
 
 
@@ -13,10 +13,11 @@ function App() {
     
     <div style={objStyle} className="App">
       <NavBar/>
-      <ComponenteContenedor/>
-      <ComponenteContenedor/>
-      <ComponenteContenedor/>
-      <ComponenteContenedor/><ComponenteContenedor/>
+      <Titulo titulo="ron"/>
+      <ItemListContainer tituloITC="Capitan morgan" subTituloITC="1400"/>
+      <ItemListContainer tituloITC="Havanna club" subTituloITC="2300"/>
+      <ItemListContainer tituloITC="Bacardi" subTituloITC="2000"/>
+      <ItemListContainer tituloITC="Malibu" subTituloITC="1000"/>
       
       
 

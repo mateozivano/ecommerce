@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CartWidget from "../container/cartWidget";
 import "../navbar.css";
 
 function NavBar() {
@@ -41,9 +42,7 @@ function NavBar() {
           </a>
         </li>
         <li className="nav__item">
-          <a href="#" className="nav__link">
-            Carrito🛒
-          </a>
+          <CartWidget/>
         </li>
       </ul>
       <div onClick={navToggle} className={icon}>
