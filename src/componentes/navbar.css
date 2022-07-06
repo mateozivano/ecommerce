@@ -22,7 +22,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 12vh;
+  height: 30vh;
   background: rgb(0, 33, 65);
 }
 .nav__brand {

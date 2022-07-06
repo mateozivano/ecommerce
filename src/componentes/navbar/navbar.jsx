@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import CartWidget from "../container/cartWidget";
 import "../navbar.css";
+import { Link, NavLink } from "react-router-dom";
+
 
 function NavBar() {
   const [active, setActive] = useState("nav__menu");
@@ -9,7 +11,7 @@ function NavBar() {
     if (active === "nav__menu") {
       setActive("nav__menu nav__active");
     } else setActive("nav__menu");
-
+    
     
     if (icon === "nav__toggler") {
       setIcon("nav__toggler toggle");
@@ -17,9 +19,9 @@ function NavBar() {
   };
   return (
     <nav className="nav">
-      <a href="#" className="nav__brand">
+      <NavLink to="/" href="#" className="nav__brand">
         El boticario
-      </a>
+      </NavLink>
       <ul className={active}>
         <li className="nav__item">
           <a href="#" className="nav__link">
@@ -42,7 +44,9 @@ function NavBar() {
           </a>
         </li>
         <li className="nav__item">
+          <Link to="/cart">
           <CartWidget/>
+          </Link>
         </li>
       </ul>
       <div onClick={navToggle} className={icon}>

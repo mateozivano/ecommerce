@@ -3,26 +3,44 @@ import './App.css';
 import ItemListContainer from "./componentes/container/ItemListContainer";
 import Titulo from "./componentes/container/titulo";
 import NavBar from "./componentes/navbar/navbar";
+import Cart from "./componentes/container/Cart";
+import Item from "./componentes/container/Item";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+
+
+
+
+
 
 
 function App() {
 
-  const objStyle = {color: "white", backgroundColor: "black", fontSize: 50};
+  const objStyle = { color: "white", backgroundColor: "black", fontSize: 50 };
 
   return (
-    <section>
-    <div style={objStyle} className="App">
-      <NavBar />
-      </div>
-      <Titulo titulo="Bebidas disponibles"/>
-      <ItemListContainer />
-      
-      
-      
+    <BrowserRouter>
+      <section>
+        <div style={objStyle} className="App">
+          <NavBar />
+        </div>
+        <Routes>
+          <Route index path="/" element={<ItemListContainer greeting={'itemlistcontainer'} />} />
+          <Route  path="/detalle/:id" element={<Item />}/>
+          <Route path="/cart" element={<Cart />}/>
+          <Route path="*" element={<Navigate to="/"/>}/>
+          {/* 
+          <Titulo titulo="Bebidas disponibles" />
+          
+           */} 
 
-     
-    
-    </section>
+        </Routes>
+
+
+
+
+      </section>
+    </BrowserRouter>
   );
 }
 
