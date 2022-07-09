@@ -11,8 +11,8 @@ function NavBar() {
     if (active === "nav__menu") {
       setActive("nav__menu nav__active");
     } else setActive("nav__menu");
-    
-    
+
+
     if (icon === "nav__toggler") {
       setIcon("nav__toggler toggle");
     } else setIcon("nav__toggler");
@@ -23,29 +23,29 @@ function NavBar() {
         El boticario
       </NavLink>
       <ul className={active}>
+
         <li className="nav__item">
-          <a href="#" className="nav__link">
-                Inicio
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="#" className="nav__link">
+          <Link to="/bebidas">
             Bebidas
-          </a>
+          </Link>
+
         </li>
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <Link to="/vasos">
             Vasos
-          </a>
+          </Link>
+
         </li>
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <Link to="/accesorios">
             Accesorios
-          </a>
+          </Link>
+
+
         </li>
         <li className="nav__item">
           <Link to="/cart">
-          <CartWidget/>
+            <CartWidget />
           </Link>
         </li>
       </ul>

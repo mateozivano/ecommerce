@@ -26,8 +26,11 @@ function App() {
         </div>
         <Routes>
           <Route index path="/" element={<ItemListContainer greeting={'itemlistcontainer'} />} />
-          <Route  path="/detalle/:id" element={<ItemDetailContainer />}/>
+          <Route path="/detalle/:id" element={<ItemDetailContainer />}/>
           <Route path="/cart" element={<Cart />}/>
+          <Route path="/bebidas" element={<Cart />}/>
+          <Route path="/vasos" element={<Cart />}/>
+          <Route path="/accesorios" element={<Cart />}/>
           <Route path="*" element={<Navigate to="/"/>}/>
           {/* 
           <Titulo titulo="Bebidas disponibles" />
