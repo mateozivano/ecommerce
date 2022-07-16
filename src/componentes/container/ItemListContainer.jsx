@@ -1,23 +1,33 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
 import { gFetch } from "../helpers/getFetch";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import  ItemList  from "../container/ItemList";
 
-/* const ItemListContainer = ({tituloITC, subTituloITC}) => {
- 
-    return(
-        <div>
-                <h3> {tituloITC} </h3>
-                <p> {subTituloITC}  </p>
-        </div>
-    )
 
-} (esto queda por las dudas)*/
 
 const ItemListContainer = ({ greeting }) => {
+    const [productos, setProductos] = useState([])
+    const {id} = useParams()
+
+    useEffect(()=>{
+        if(id){
+        gFetch
+        .then((data)=>{
+            setProductos(data.filter(p=>p.categoria === id))
+        })
+        }else{
+            gFetch
+            .then((data)=> setProductos(data))
+            .catch((err)=> console.log(err))
+        }
+    },[id])
+
     return (
-        <ItemList/>
+        <section className='itemlistcontainer'>
+            <h2>{greeting}</h2>
+            <ItemList/>
+        </section>
     )
 }
 

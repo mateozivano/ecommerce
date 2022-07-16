@@ -5,6 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 
 
 function NavBar() {
+  const [input, setInput] = useState("") ; /*esto es para un search bar q implementare mas tarde*/ 
   const [active, setActive] = useState("nav__menu");
   const [icon, setIcon] = useState("nav__toggler");
   const navToggle = () => {
@@ -25,20 +26,20 @@ function NavBar() {
       <ul className={active}>
 
         <li className="nav__item">
-          <Link to="/bebidas">
-            Bebidas
+          <Link to="/Whiskies">
+            Whiskies
           </Link>
 
         </li>
         <li className="nav__item">
-          <Link to="/vasos">
-            Vasos
+          <Link to="/Ron">
+            Ron
           </Link>
 
         </li>
         <li className="nav__item">
-          <Link to="/accesorios">
-            Accesorios
+          <Link to="/Cerveza">
+            Cerveza
           </Link>
 
 
