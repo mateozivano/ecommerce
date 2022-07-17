@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, NavLink } from "react-router-dom";
-import { gFetch } from "../helpers/getFetch";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { mercaderia } from "../helpers/ProductsNoFetch";
-
+import {ItemCount} from "../container/ItemCount"
+import { useContext } from 'react';
+import { CartContext } from '../container/cartContext';
 
 
 
@@ -14,6 +15,14 @@ const ItemDetail = () => {
     const { id } = useParams();
 
     const singleProduct = mercaderia.find((product) => (product.id) === id);
+
+    const [cart, agregarAlcarrito] = useContext(CartContext)
+    const [cantidad, setCantidad] = useState();
+
+    const functionCount = (contador)=>{
+        console.log("el valor del contador es", contador)
+       setCantidad(contador)
+    }
 
 
     return (
@@ -35,6 +44,7 @@ const ItemDetail = () => {
 
                     <p>Este {singleProduct.categoria} posee x cualidades</p>
             </div>
+            {cantidad? <Link to="/cart"><button>Terminar Compra</button></Link> : <ItemCount stock={5} initial={1} onAdd={functionCount} />}
         </section>
 
 

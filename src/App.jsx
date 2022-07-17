@@ -6,7 +6,7 @@ import NavBar from "./componentes/navbar/navbar";
 import Cart from "./componentes/container/Cart";
 import ItemDetailContainer from "./componentes/container/ItemDetailContainer";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
+import {CarritoContext} from "./componentes/container/cartContext"
 
 
 
@@ -21,6 +21,7 @@ function App() {
   const objStyle = { color: "white", backgroundColor: "black", fontSize: 50 };
 
   return (
+    <CarritoContext>
     <BrowserRouter>
       <section>
         <div style={objStyle} className="App">
@@ -47,6 +48,7 @@ function App() {
 
       </section>
     </BrowserRouter>
+    </CarritoContext>
   );
 }
 
