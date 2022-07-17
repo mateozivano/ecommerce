@@ -20,8 +20,10 @@ const ItemDetail = () => {
     const [cantidad, setCantidad] = useState();
 
     const functionCount = (contador)=>{
-        console.log("el valor del contador es", contador)
+       console.log("el valor del contador es", contador)
        setCantidad(contador)
+       const producto = {item: singleProduct, quantity: contador}
+       agregarAlcarrito(producto)
     }
 
 
@@ -38,7 +40,10 @@ const ItemDetail = () => {
                 }}>
                     <h2>{singleProduct.price}</h2>
                     <p>datos/medio de pago</p>
-                    <button>Añadir al carrito</button>
+                    <p>etc</p>
+                    <p>etc</p>
+                    <p>etc</p>
+                    
                     
                 </div>
 
